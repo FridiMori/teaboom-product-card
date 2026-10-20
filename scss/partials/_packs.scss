@@ -1,0 +1,62 @@
+@use "_var.scss" as *;
+
+.packs {
+  min-width: 0;
+  margin: 0 0 20px;
+  padding: 0;
+  border: 0;
+}
+
+.packs__legend {
+  margin-bottom: 8px;
+  padding: 0;
+  font-weight: 600;
+  color: $darkcolor;
+}
+
+.packs__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  @include sm {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pack {
+  position: relative;
+  display: block;
+  @include hover {
+    &:hover .pack__label {
+      border-color: $colorBrand;
+    }
+  }
+}
+
+.pack__input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  &:checked + .pack__label {
+    color: $whiteColor;
+    background: $darkcolor;
+    border-color: $darkcolor;
+  }
+  &:focus-visible + .pack__label {
+    @include focus;
+  }
+}
+
+.pack__label {
+  display: block;
+  padding: 10px 8px;
+  text-align: center;
+  font-weight: 600;
+  color: $darkcolor;
+  background: $panelColor;
+  border: 2px solid $lineColor;
+  border-radius: $radius;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}

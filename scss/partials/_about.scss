@@ -1,0 +1,34 @@
+@use "_var.scss" as *;
+
+.about {
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  background: $creamColor;
+  border: 1px solid $creamLineColor;
+  border-left: 4px solid $colorBrand;
+}
+
+.about__lead {
+  margin: 0 0 12px;
+}
+
+.about__facts {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  font-size: 15px;
+  div {
+    display: grid;
+    gap: 2px 12px;
+    @include sm {
+      grid-template-columns: 64px 1fr;
+    }
+  }
+  dt {
+    font-weight: 600;
+    color: $darkcolor;
+  }
+  dd {
+    margin: 0;
+  }
+}

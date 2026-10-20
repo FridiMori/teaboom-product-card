@@ -1,0 +1,61 @@
+@use "_var.scss" as *;
+
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 14px;
+  &.is-changed .price__now {
+    animation: swap 0.35s ease;
+  }
+}
+
+.price__now {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+  color: $priceColor;
+  font-variant-numeric: tabular-nums;
+  @include sm {
+    font-size: 36px;
+  }
+}
+
+.price__old {
+  font-size: 18px;
+  color: $textgrayColor;
+}
+
+.price__badge {
+  align-self: center;
+  padding: 2px 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: $colorBrandText;
+  background: $colorBrandSoft;
+  border-radius: 99px;
+}
+
+.meta {
+  @include resetList;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin: 8px 0 20px;
+  font-size: 14px;
+  color: $textgrayColor;
+  b {
+    color: $textgrayDarkColor;
+  }
+}
+
+.meta__stock {
+  color: $priceColor;
+}
+
+@keyframes swap {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}

@@ -1,0 +1,15 @@
+@use "_var.scss" as *;
+
+.title {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 115%;
+  color: $darkcolor;
+  @include sm {
+    font-size: 32px;
+  }
+  @include md {
+    font-size: 40px;
+  }
+}

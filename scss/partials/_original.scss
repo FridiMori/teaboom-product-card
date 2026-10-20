@@ -1,0 +1,169 @@
+@use "_var.scss" as *;
+
+.variant + .variant {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 2px dashed $borderColor;
+}
+
+.variant__label {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 2px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $whiteColor;
+  background: $textgrayColor;
+  border-radius: 99px;
+}
+
+.variant__label_brand {
+  background: $colorBrand;
+}
+
+//Копия оригинальной карточки 
+.orig__list {
+  @include resetList;
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+  @include md {
+    margin-top: 56px;
+  }
+}
+
+.orig-row {
+  display: grid;
+  grid-template-columns: 1fr auto 52px;
+  grid-template-areas:
+    "pack price cart"
+    "stock price cart";
+  align-items: center;
+  column-gap: 12px;
+  background: $panelColor;
+  border: 1px solid $lineColor;
+  @include sm {
+    grid-template-columns: 1fr auto 54px 96px;
+    grid-template-areas: "pack price cart stock";
+  }
+}
+
+.orig-row__pack {
+  grid-area: pack;
+  display: grid;
+  padding: 8px 0 0 14px;
+  line-height: 130%;
+  @include sm {
+    padding-bottom: 8px;
+  }
+  b {
+    font-size: 16px;
+    color: $textgrayDarkColor;
+  }
+  span {
+    font-size: 11px;
+    font-weight: 700;
+    color: $textgrayColor;
+  }
+}
+
+.orig-row__price {
+  grid-area: price;
+  display: grid;
+  justify-items: end;
+  padding: 8px 0;
+  line-height: 125%;
+}
+
+.orig-row__now {
+  font-size: 22px;
+  font-weight: 600;
+  color: $origPriceColor;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  @include sm {
+    font-size: 24px;
+  }
+}
+
+.orig-row__old {
+  font-size: 14px;
+  font-weight: 700;
+  color: $textgrayColor;
+  white-space: nowrap;
+}
+
+.orig-row__cart {
+  grid-area: cart;
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  min-height: 52px;
+  padding: 0;
+  color: $textColor;
+  background: $colorBrandSoft;
+  border: 0;
+  transition: background 0.2s, color 0.2s;
+  svg {
+    width: 26px;
+    height: 26px;
+    transition: color 0.2s;
+  }
+  @include hover {
+    &:hover {
+      color: $goldColor;
+      background: $darkcolor;
+    }
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+  &:focus-visible {
+    @include focus;
+    outline-offset: -3px;
+  }
+  &.is-added {
+    color: $whiteColor;
+    background: $colorBrand;
+  }
+}
+
+.orig-row__check {
+  display: none;
+}
+
+.orig-row__cart.is-added {
+  .orig-row__icon {
+    display: none;
+  }
+  .orig-row__check {
+    display: block;
+  }
+}
+
+.orig-row__stock {
+  grid-area: stock;
+  display: flex;
+  gap: 4px;
+  padding: 0 0 8px 14px;
+  font-size: 12px;
+  line-height: 130%;
+  span {
+    font-weight: 700;
+    color: $textgrayColor;
+  }
+  b {
+    color: $priceColor;
+  }
+  @include sm {
+    display: grid;
+    gap: 0;
+    padding: 8px 8px 8px 0;
+    font-size: 11px;
+    b {
+      font-size: 15px;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@use "_var.scss" as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 32px;
+  font-weight: 700;
+  color: $darkcolor;
+  background: $colorBrandSoft;
+  border: none;
+  border-radius: $radius;
+  transition: background 0.2s, color 0.2s;
+  &:active {
+    transform: translateY(1px);
+  }
+  &:focus-visible {
+    @include focus;
+  }
+}
+
+.btn_cart {
+  width: 100%;
+  @include sm {
+    width: auto;
+    min-width: 240px;
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+    transition: color 0.2s;
+  }
+  @include hover {
+    &:hover {
+      color: $whiteColor;
+      background: $darkcolor;
+      svg {
+        color: $goldColor;
+      }
+    }
+  }
+  &.is-added {
+    color: $whiteColor;
+    background: $colorBrand;
+    svg {
+      color: $whiteColor;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+// Цветовая гамма Teaboom
+// Базовые
+$whiteColor:       #fff;
+$darkcolor:        #202020;   // графитовый: заголовки, активная фасовка, hover кнопки
+$textColor:        #3a3a3a;   // основной текст
+$textgrayColor:    #8a8f94;   // второстепенный текст, старая цена
+$textgrayDarkColor:#5f6368;
+
+// Бренд (салатовый)
+$colorBrand:       #84bd1b;
+$colorBrandDark:   #6c9a16;
+$colorBrandSoft:   #eef5d2;   // фон кнопки «В корзину», бейдж скидки
+$colorBrandText:   #4d7a00;
+
+// Акценты
+$priceColor:       #e5252a;   // цена, наличие, избранное
+$priceSoftColor:   #fff1f1;
+$origPriceColor:   #f00;      // красный цены в оригинальной карточке сайта
+$goldColor:        #f7c52d;   // иконка корзины при hover
+
+// Как на оригинальном сайте (блок сравнения)
+$originalPriceColor: #ff0000;
+
+// Поверхности и линии
+$bgColor:          #fafbfb;
+$creamColor:       #fffdf2;   // блок описания
+$creamLineColor:   #f1ecd2;
+$panelColor:       #f4f6f8;
+$lineColor:        #e3e7ea;
+$borderColor:      #cfd4d8;
+
+// Служебные
+$focusRing:        rgba(132, 189, 27, 0.55);

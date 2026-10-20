@@ -1,0 +1,40 @@
+@forward "colors";
+@use "colors" as *;
+
+$fontMain: "Open Sans", Arial, sans-serif;
+$radius: 4px;
+
+@mixin resetList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+@mixin focus {
+  outline: 3px solid $focusRing;
+  outline-offset: 2px;
+}
+
+@mixin sm {
+  @media screen and (min-width: 560px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
